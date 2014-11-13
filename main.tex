@@ -19,7 +19,7 @@
 %Matte
 \usepackage{amsmath}
 \usepackage[makeroom]{cancel}
-%\usepackage{gensymb} % \degree
+\usepackage{gensymb} % \degree
 %%
 
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
@@ -83,7 +83,7 @@
 %	SECTION 1
 %----------------------------------------------------------------------------------------
 \section{intro}
-foo bar
+Beräkningar är gjorda i MATLAB och koden finns i Appendix.
 
 %----------------------------------------------------------------------------------------
 %	SECTION 2
@@ -103,14 +103,48 @@ inkopplat som är märkt 90 kVAr.
 Här ska fasströmmen som respektive last drar beräknas.
 Ett visardiagram skall ritas för varje ström samt den totala strömmen, fas a används som referens.
 Ekvikalenta impedanser skall också beräknas.
+Här antas symmetriska laster.
 
-\subsubsection{Fasströmmar}
-Effekten i flerfamiljehuset är 250kW, eftersom enheten är watt är det reaktiv effekt som är beräknat.
-Jag
-\begin{equation}
-  P=3UIcos\varphi
-\label{P}
-\end{equation}
+  \subsubsection{Fasströmmar}
+  Effekten i flerfamiljehuset är 250kW, eftersom enheten är watt är det aktiv effekt som är beräknat.
+  Jag använder \ref{P} för att beräkna strömmen $I_1$ där $U=400\angle{0\degree}$
+  Detta ger mig $I_1=xx=a+jb$
+
+  \begin{equation}
+    P=\sqrt3UIcos\varphi
+    \label{P}
+  \end{equation}
+
+  Effekten för förskolan är skriven i Voltampere, detta betyder att det är skenbar effekt som är beräknat.
+  Då använder jag \ref{S} och löser ut $I_2$ för att få fram att $I_2=(I_2^*)^*=xx=a+jb$
+
+  \begin{equation}
+    S=\sqrt3UI^*=P+jQ
+    \label{S}
+  \end{equation}
+
+  Motorn är parallellkopplad med ett kondensatorbatteri för att faskompenseras och därmed dra en lägre total reaktiv effekt.
+  Här används \ref{Q},\ref{P},\ref{S} för att få fram aktiv och reaktiv effekt för motorn.
+  Effekterna kan sedan summeras eftersom de är parallellkopplade för att få fram den totala skenbara effekten.
+  Efter detta kan jag göra precis som i förra upgiften för att lösa ut $I_2=xx\angle{xx\degree}=a+jb$
+
+  \begin{equation}
+    Q=\sqrt3UIsin\varphi
+    \label{Q}
+  \end{equation}
+
+  När dessa är beräknade så kan man enkelt räkna ut den totala strömmen genom att summera de enskilda komplexa strömmarna.
+  Detta ger $I_{tot}=xx$
+
+  %Infoga bilder på visardiagrammen.
+
+  De ekvivalenta impedanserna fås ur Ohms lag (\ref{ohms}), dessa blir följande:
+  \begin{equation}
+    Z=\frac{U}{I}
+    \label{ohms}
+  \end{equation}
+
+  %Infoga tabell med ekvivalenta impedanser
 
 \subsection{b}
 ipsum
