@@ -1,0 +1,197 @@
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+%\usepackage{mhchem} % Package for chemical equation typesetting
+\usepackage{siunitx} % Provides the \SI{}{} command for typesetting SI units
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[swedish]{babel}
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+
+%Matte
+\usepackage{amsmath}
+\usepackage[makeroom]{cancel}
+%\usepackage{gensymb} % \degree
+%%
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+%\usepackage{times} % Uncomment to use the Times New Roman font
+
+
+%%% För kod!
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Matlab,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+}
+%%%% slut kod
+
+
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{Elteknik - inlämning 1} % Title
+
+\author{
+	\begin{tabular}{l r}
+    Marcus Olsson \\
+    %number & number & number% Author name
+    \\
+    \end{tabular}
+    }
+
+\date{\today} % Date for the report
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+\tableofcontents
+\clearpage
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+\section{intro}
+foo bar
+
+%----------------------------------------------------------------------------------------
+%	SECTION 2
+%----------------------------- -
+\section{A}
+Ett litet elnät planeras med följande laster vid 400V
+
+\begin{enumerate}
+	\item Flerfamiljehus – den beräknade toppeffekten är 250 kW, $cos\varphi = 0,98$.
+	\item Förskola och andra samlingslokaler – effektbehovet max 100 kVA, $cos\varphi = 0,95$
+	\item En symmetrisk trefas, Y – kopplad asynkronmotor med märkspänning 400 V,
+märkström 200 A och $cos\varphi = 0,8$. Parallellt med motorn är ett kondensatorbatteri
+inkopplat som är märkt 90 kVAr.
+\end{enumerate}
+
+\subsection{a}
+lorem
+\subsection{b}
+ipsum
+\subsection{c}
+lorem
+%----------------------------------------------------------------------------------------
+%	SECTION 3
+% %----------------------------------------------------------------------------------------
+\section{B}
+lorem
+%----------------------------------------------------------------------------------------
+%	SECTION 4
+%----------------------------------------------------------------------------------------
+\section{C}
+\subsection{a}
+lorem
+\subsection{b}
+ipsum
+%----------------------------------------------------------------------------------------
+%	SECTION 5
+%----------------------------------------------------------------------------------------
+\section{D}
+\subsection{a}
+lorem
+\subsection{b}
+ipsum
+\subsection{c}
+lorem
+\subsection{d}
+lorem
+\subsection{e}
+lorem
+\subsection{f}
+lorem
+\subsection{g}
+lorem
+\subsection{h}
+lorem
+\subsection{i}
+%----------------------------------------------------------------------------------------
+%	SECTION 6
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 7
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 8
+%---------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 9
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 10
+%----------------------------------------------------------------------------------------
+
+
+%-----------------------------------------------------------------------------
+%	Appendix
+%-----------------------------------------------------------------------------
+% \newpage
+% \appendix
+% \section{Matlab}
+
+% \lstinputlisting[label=main.m,caption=main.m]{code/main.m}
+
+% \subsection{Images}
+
+% \begin{figure}[H]
+% \begin{center}
+% \includegraphics[width=1\textwidth]{img/bode.jpg} % Include the image placeholder.png
+% \caption{Bode}
+% \end{center}
+% \end{figure}
+
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+%\bibliographystyle{unsrt}
+
+%\bibliography{sample}
+
+%----------------------------------------------------------------------------------------
+
+
+\end{document}
