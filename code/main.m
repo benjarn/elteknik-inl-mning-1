@@ -4,6 +4,7 @@
 clear all;
 close all;
 clc;
+cart2pol = @(z) [abs(z), angle(z)*180/pi] % För att skriva ut värden på polär form
 %Fasstrommar
 % 1.
 U=400+j*0;
@@ -11,6 +12,7 @@ phi1=acosd(0.98);
 P1=250e3;
 
 I1=P1/(sqrt(3)*U*cosd(phi1))
+cart2pol(I1)
 
 % 2.
 S2=100e3;
@@ -18,6 +20,7 @@ phi2=acosd(0.95);
 
 Ic=S2/(sqrt(3)*U);
 I2=conj(Ic)
+cart2pol(I2)
 
 % 3.
 % Givna enheter
@@ -30,9 +33,11 @@ Qmotor=sqrt(3)*U*Imotor*sind(phimotor); % Reaktiv effekt för motorn
 Qtot=Qmotor+Qbat; % Total reaktiv effekt
 S3=Pmotor+j*Qtot; % Skenbar effekt
 I3=conj(S3/(sqrt(3)*U))
+cart2pol(I3)
 
 % Itot
 Itot=I1+I2+I3
+cart2pol(Itot)
 
 % Impedanser
 Z=U./[I1 I2 I3 Itot]
@@ -48,6 +53,7 @@ Stot=S1+S2+S3
 clear all
 close all
 clc;
+cart2pol = @(z) [abs(z), angle(z)*180/pi]
 
 % Lägg in huvudspänningar med U1 som referens
 U1=400+j*0;
@@ -59,12 +65,19 @@ Z2=100+j*0;
 Z3=20-j*15;
 % Ström genom verje impedans
 Iab=U1/Z1
+cart2pol(Iab)
 Ibc=U2/Z2
+cart2pol(Ibc)
 Iac=U3/Z3
+cart2pol(Iac)
 % Fasströmmar
 Ia=Iab+Iac
+cart2pol(Ia)
 Ib=Ibc-Iab
+cart2pol(Ib)
 Ic=-(Ibc+Iac)
+cart2pol(Ic)
+
 
 %% C
 
@@ -129,11 +142,18 @@ b2v=AcuN2/(h*kcu) % b2
 (b1v+b2v)-b1b2 % skriver ut värdet
 
 % D.g
-Bmax = [1.1, 1.2];
-f=50;
-b=60;
-kFe=[0.90, 0.95];
-A=1e6*U1./(4.4*f*N1v*Bmax)
-d=A/b
-d*kFe(1)
-d*kFe(2)
+Bmax = [1.1, 1.2]; % Bmax min och max
+f=50; % frekvens Hz
+b=60; % bredden på järnkärnan inuti bobbin
+kFe=[0.90, 0.95]; % kFe min och max
+A=1e6*U1./(4.4*f*N1v*Bmax); % Area i mm
+d=A/b; % effektiv järntjocklek
+d/kFe(1) % total järntjocklek med fyllnadsfaktor 0.9
+d/kFe(2) % -- 0.95
+
+dv=62; % vald total tjocklek på bobbin
+kFev=kFe(2);
+Av=dv*b*kFev;
+Bmaxv=1e6*U1./(4.4*f*N1v*Av)
+
+% D.h
