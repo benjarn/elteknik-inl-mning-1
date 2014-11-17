@@ -48,7 +48,7 @@ Z=U./[I1 I2 I3 Itot]
 % Skenbar effekt för varje last samt den totala
 Q1=U*real(I1)*sind(phi1);
 S1=P1+j*Q1
-S2 % är inte rätt! fattas en vinkel!
+S2=sqrt(3)*U*conj(I2)
 S3
 Stot=S1+S2+S3
 
