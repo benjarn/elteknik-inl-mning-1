@@ -77,13 +77,13 @@
 %----------------------------------------------------------------------------------------
 %	SECTION 1
 %----------------------------------------------------------------------------------------
-\section{intro}
+\section{Intro}
 Beräkningar är gjorda i MATLAB och koden finns i Appendix.
 
 %----------------------------------------------------------------------------------------
 %	SECTION 2
 %----------------------------- -
-\section{A}
+\section{A - Elnät}
 Ett litet elnät planeras med följande laster vid 400V
 
 \begin{enumerate}
@@ -136,7 +136,6 @@ Här antas symmetriska laster.
   När dessa är beräknade så kan man enkelt räkna ut den totala strömmen genom att summera de enskilda komplexa strömmarna.
   Detta ger $I_{tot}=658-j108 = 667\angle{-9.3\degree} A$
 
-  %Infoga bilder på visardiagrammen.
   \subsubsection{Impedanser}
   De ekvivalenta impedanserna fås ur Ohms lag [\ref{ohms}], dessa blir följande:
   \begin{equation}
@@ -150,7 +149,38 @@ Här antas symmetriska laster.
     $z_3=1.44 - j0.09$\\
     $z_{tot}=0.34 + j0.056$\\
   \end{tabular}
-  %Infoga tabell med ekvivalenta impedanser
+
+  \subsubsection{Visardiagram}
+  Här är visardiagram för strömmarna $I_1 - I_{tot}$ för första fasen, detta eftersom det är symmetriska laster.
+
+
+  \begin{figure}[H]
+  \begin{center}
+  \includegraphics[width=0.7\textwidth]{img/I1.jpg} % Include the image placeholder.png
+  \caption{Strömmen $I_1$}
+  \end{center}
+  \end{figure}
+
+  \begin{figure}[H]
+  \begin{center}
+  \includegraphics[width=0.7\textwidth]{img/I2.jpg} % Include the image placeholder.png
+  \caption{Strömmen $I_2$}
+  \end{center}
+  \end{figure}
+
+  \begin{figure}[H]
+  \begin{center}
+  \includegraphics[width=0.7\textwidth]{img/I3.jpg} % Include the image placeholder.png
+  \caption{Strömmen $I_3$}
+  \end{center}
+  \end{figure}
+
+  \begin{figure}[H]
+  \begin{center}
+  \includegraphics[width=0.7\textwidth]{img/Itot.jpg} % Include the image placeholder.png
+  \caption{Totala strömmen}
+  \end{center}
+  \end{figure}
 
 \subsection{b}
   Här ska den skenbara effekten beräknas, för alla laster inkopplade och var och en för sig.
@@ -173,7 +203,7 @@ Eftersom den reaktiva effekten för kondensatorn är större än för motorn bli
 %----------------------------------------------------------------------------------------
 %	SECTION 3
 % %----------------------------------------------------------------------------------------
-\section{B}
+\section{B - Osymmetrisk trefas}
   En osymmetrisk trefas är kopplad till en huvudspänning på $U_{ab}=400V$
   Fasströmmarna samt strömmen genom varje impedans skall beräknas.
   Ett visardiagram skall också ritas med $U_{ab}$ som referens.
@@ -215,7 +245,7 @@ ipsum
 %----------------------------------------------------------------------------------------
 %	SECTION 5
 %----------------------------------------------------------------------------------------
-\section{D}
+\section{D - Transformator}
 Det gäller att dimensionera en 50 Hz enfastransformator med märkeffekten Sn, primärspänningen
 U1n och sekundärspänningen U2n med användning av ett givet plåtsnitt. Plåtsnittets dimensioner
 är angivna i figur \ref{fig:trafo}.
@@ -423,8 +453,8 @@ Jämför värdena $R_k,X_k,P_0,I_0$ med praktiska värden från ett kortsutnings
 
 Då man jämför kortslutningsvärdena ($R_k,X_k$) så använder man [\ref{Zk},\ref{phik},\ref{Rk},\ref{Xk}] och ser att\
 $R_k= 0.89$ vilket är lite större än mitt beräknade.
-Detta kan bero på till exempel \ldots
-$X_k= 0.53$ vilket är mindre än det beräknade, detta beror antagligen på \ldots
+Detta kan kanske bero på att det är olika antal varv och kopparareor, vilket påverkar resistansen.
+$X_k= 0.53$ vilket är mindre än det beräknade, detta kan bero på att det är en annan tjocklek på järnkärnan.
 
 \begin{equation}
   Z_k=\frac{U_k}{I_k}
