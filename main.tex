@@ -102,8 +102,13 @@ Här antas symmetriska laster.
 
   \subsubsection{Fasströmmar}
   Effekten i flerfamiljehuset är 250kW, eftersom enheten är watt är det aktiv effekt som är beräknat.
-  Jag använder [\ref{P}] för att beräkna strömmen $I_1$ där $U=400\angle{0\degree}$
-  Detta ger mig $I_1=368\angle{11.5\degree}=361+j73.3 A$
+  Jag använder [\ref{P},\ref{I}] för att beräkna strömmen $I_1$ där $U=400\angle{0\degree}$
+  Detta ger mig $I_1=368\angle{-11.5\degree}=361-j73.3 A$
+
+  \begin{equation}
+    \underline{I} = I\angle{-\varphi}
+    \label{I}
+  \end{equation}
 
   \begin{equation}
     P=\sqrt3UIcos\varphi
@@ -111,7 +116,7 @@ Här antas symmetriska laster.
   \end{equation}
 
   Effekten för förskolan är skriven i Voltampere, detta betyder att det är skenbar effekt som är beräknat.
-  Då använder jag [\ref{S}] och löser ut $I_2$ för att få fram att $I_2=(I_2^*)^*=144\angle{18.2\degree}=137+j45 A$
+  Då använder jag [\ref{S},\ref{I}] och löser ut $I_2$ för att få fram att $I_2=(I_2^*)^*=144\angle{-18.2\degree}=137-j45 A$
 
   \begin{equation}
     S=\sqrt3UI^*=P+jQ
@@ -129,21 +134,21 @@ Här antas symmetriska laster.
   \end{equation}
 
   När dessa är beräknade så kan man enkelt räkna ut den totala strömmen genom att summera de enskilda komplexa strömmarna.
-  Detta ger $I_{tot}=658+j128 = 670\angle{11\degree} A$
+  Detta ger $I_{tot}=658-j108 = 667\angle{-9.3\degree} A$
 
   %Infoga bilder på visardiagrammen.
   \subsubsection{Impedanser}
   De ekvivalenta impedanserna fås ur Ohms lag [\ref{ohms}], dessa blir följande:
   \begin{equation}
-    Z=\frac{U}{I}
+    Z=\frac{U_f}{I_f}=\frac{U}{\sqrt{3} I_f}
     \label{ohms}
   \end{equation}
 
   \begin{tabular}{l}
-    $z_1=1.06-j0.22$\\
-    $z_2=2.63-j0.87$\\
-    $z_3=2.49-j0.15$\\
-    $z_{tot}=0.59-j0.11$\\
+    $z_1=0.61 + j0.12$\\
+    $z_2=1.52 + j0.50$\\
+    $z_3=1.44 - j0.09$\\
+    $z_{tot}=0.34 + j0.056$\\
   \end{tabular}
   %Infoga tabell med ekvivalenta impedanser
 
@@ -153,15 +158,17 @@ Här antas symmetriska laster.
   Eftersom vinkeln för $S_{tot}$ är positiv så är den totala lasten induktiv.
 
   \begin{tabular}{l}
-      $S_1=250 + j29.3 kVa$ \\
-      $S_2=100kVA$ \\
-      $S_311.1e - j6.86 kVA$\\
-      $S_{tot}=461 + j22.4 kVa$
+      $S_1=250 + j28.7 kVA$ \\
+      $S_2=95+ j31.2 kVA$ \\
+      $S_3 = 111 -  j6.86 kVA$\\
+      $S_{tot}=456 + j53.1 kVA$
   \end{tabular}
 
 \subsection{c}
 Den tredje lasten är faskompenserad med ett kondensatorbatteri.
 Detta gör man ofta på större motorer för att minska den reaktiva effekten i nätet.
+Eftersom den reaktiva effekten för kondensatorn är större än för motorn blir nettoeffekten negativ och strömmen får en positiv vinkel.
+
 
 %----------------------------------------------------------------------------------------
 %	SECTION 3
@@ -219,6 +226,7 @@ $Sn = 1160 VA, U1n = 220 V,U2n = 110 V$
  \begin{center}
  \includegraphics[width=1\textwidth]{img/transformatorplat.png} % Include the image placeholder.png
  \caption{Transformatorplåtens dimensioner}
+ \label{fig:trafo}
  \end{center}
  \end{figure}
 
@@ -228,10 +236,17 @@ Märkströmmarna beräknas med [\ref{markstrom}] och blir:
   $I_1=5.27 A$\\
   $I_2=10.55 A$\\
 \end{tabular}
+\\
+Transformatoromsättningen blir enligt [\ref{n}] $n=2$.
 
 \begin{equation}
   I=\frac{S}{U}
   \label{markstrom}
+\end{equation}
+
+\begin{equation}
+  n=\frac{N_1}{N_2}=\frac{U_1}{U_2}
+  \label{n}
 \end{equation}
 
 \subsection{b}
@@ -304,7 +319,7 @@ Dessa är $d_1=2.00 mm,d_2=2.60 mm$.
 Sedan måste en isolation på $0.1 mm$ adderas till diametrarna.
 Varvantalet väljs till det i mitten av intervallet, $N_1=202, N_2=101$.
 Kopparareorna beräknas enligt [\ref{Acu}], den totala koppararean blir då $A_{Cu}=A_{Cu1}+A_{Cu2}$.
-Då kan fyllfaktorn beräknas enligt [\ref{kCu}] och blir $k_{Cu}= 0.58$.
+Då kan fyllfaktorn beräknas enligt [\ref{Kcu}] och blir $k_{Cu}= 0.58$.
 Efter detta beräknas $b_1,b_2$ enligt [\ref{bn}] och blir:
 \begin{tabular}{|l}
   $b_1=14.67 mm$\\

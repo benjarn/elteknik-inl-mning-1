@@ -13,7 +13,7 @@ phi1=acosd(0.98);
 P1=250e3;
 
 I1r=P1/(sqrt(3)*U*cosd(phi1)); % realdel av I1
-I1=pol2cart(I1r, phi1)
+I1=pol2cart(I1r, -phi1)
 cart2pol(I1)
 
 % 2.
@@ -21,7 +21,7 @@ S2=100e3;
 phi2=acosd(0.95);
 
 I2r=S2/(sqrt(3)*U);
-I2=pol2cart(I2r, phi2)
+I2=pol2cart(I2r, -phi2)
 cart2pol(I2)
 
 % 3.
@@ -48,7 +48,7 @@ Z=U./[I1 I2 I3 Itot]
 % Skenbar effekt för varje last samt den totala
 Q1=U*real(I1)*sind(phi1);
 S1=P1+j*Q1
-S2
+S2 % är inte rätt! fattas en vinkel!
 S3
 Stot=S1+S2+S3
 
