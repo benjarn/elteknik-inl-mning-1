@@ -1,4 +1,3 @@
-
 %----------------------------------------------------------------------------------------
 %	PACKAGES AND DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
@@ -219,10 +218,20 @@ Eftersom den reaktiva effekten för kondensatorn är större än för motorn bli
     $I_{bc}=-2-j3.46=4\angle{-120\degree}$\\
     $I_{ac}=-14.71+j6.29=16\angle{156.9\degree}$\\
     \\
-    $I_a=I_{ab}+I_{ac}=-9.9-j0.11=9.9\angle{-179.3\degree}$\\
-    $I_b=I_{bc}-I_{ab}=-6.8+j2.94=7.41\angle{156.6\degree}$\\
-    $I_c=-(I_{bc}+I_{ac})=16.7-j2.82=16.95\angle{-9.58\degree}$\\
+    $I_a=I_{ab}+I_{ac}=19.5-j12.6=23\angle{-33\degree}$\\
+    $I_b=I_{bc}-I_{ab}=-6.8+j2.94=7.4\angle{156.6\degree}$\\
+    $I_c=I_{ac}-I_{bc}=-12.7+j9.75=16\angle{142.5\degree}$\\
   \end{tabular}
+
+ \begin{figure}[H]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{img/visardb.jpg} % Include the image placeholder.png
+  \caption{Visardiagram med $U_{ab}$ som referens}
+  \label{fig:visarb}
+  \end{center}
+  \end{figure}
+
+
 
 
   \begin{figure}[H]
@@ -237,11 +246,11 @@ Eftersom den reaktiva effekten för kondensatorn är större än för motorn bli
 %----------------------------------------------------------------------------------------
 %	SECTION 4
 %----------------------------------------------------------------------------------------
-\section{C}
-\subsection{a}
-lorem
-\subsection{b}
-ipsum
+%\section{C}
+%\subsection{a}
+%lorem
+%\subsection{b}
+%ipsum
 %----------------------------------------------------------------------------------------
 %	SECTION 5
 %----------------------------------------------------------------------------------------
@@ -422,7 +431,7 @@ Läckreaktansen räknas enligt [\ref{Xd}] där $l_m$ är medelvarvslängen och $
 I detta fall blir läckreaktansen $X_k=1.01 \ohm $
 
 \begin{equation}
-  X_\sigma = \frac{2 \pi \mu_0 l_m N_1^2}{h} (\delta + \frac{b_1 + b_2}{3})
+  X_\sigma = \frac{2 \pi f \mu_0 l_m N_1^2}{h} (\delta + \frac{b_1 + b_2}{3})
   \label{Xd}
 \end{equation}
 
@@ -441,7 +450,12 @@ Massan på Järnet beräknas till $M_{Fe}= 10.93 kg$ och ger oss då $P_0=20.76 
 % \end{equation}
 
 \subsubsection{Tomgångsström}
-$I_{02}$...???
+$I_{02}$ kan räknas enligt [\ref{Heff}] och blir då $I_{02} = 0.40 A$
+
+\begin{equation}
+  H l = N_2 I_2
+  \label{Heff}
+\end{equation}
 
 \subsection{i}
 Jämför värdena $R_k,X_k,P_0,I_0$ med praktiska värden från ett kortsutningsprov och ett tomgångsprov.
@@ -479,7 +493,7 @@ $X_k= 0.53$ vilket är mindre än det beräknade, detta kan bero på att det är
 
 Tomgångseffekten är lite lägre än den beräknade vilket kan bero på att det var ett ganska stort intervall för $B_{max}$ och de är inte samma i verkligheten som beräknat.
 
-Tomgångsströmmen ..... ??
+Tomgångsströmmen är nästan samma som den beräknade.
 %----------------------------------------------------------------------------------------
 %	SECTION 6
 %----------------------------------------------------------------------------------------

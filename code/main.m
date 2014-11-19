@@ -74,11 +74,11 @@ cart2pol(Ibc)
 Iac=U3/Z3
 cart2pol(Iac)
 % Fasströmmar
-Ia=Iab+Iac
+Ia=Iab-Iac
 cart2pol(Ia)
 Ib=Ibc-Iab
 cart2pol(Ib)
-Ic=-(Ibc+Iac)
+Ic=Iac-Ibc
 cart2pol(Ic)
 
 
@@ -189,7 +189,11 @@ Vfe=Afe*dv*kFev; % järnvolym mm^3(Area*valt djup*fyllnadsfaktor)
 Mfe=rho_fe*Vfe/1e6 % Järnmassa kg
 P0=Pfe*Mfe % Tomgångsförlust
 
-% Tomgångsström...
+% Tomgångsström
+%H*l=N2*I2;
+H=170; % A/m
+l=(2*30+2*90)*1e-3;
+I02=(H*l)/N2v
 
 % i
 % Kortslutningstest
@@ -201,4 +205,4 @@ phik=acosd(Pk/(Ik*Uk));
 Rkmeas=Zk*cosd(phik)
 Xkmeas=Zk*sind(phik)
 
-% tomgång...
+
